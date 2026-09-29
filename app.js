@@ -24,7 +24,9 @@ function shuffle(array) {
   const copy = [...array];
 
   for (let i = copy.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
+    const j = Math.floor(
+      Math.random() * (i + 1)
+    );
 
     [copy[i], copy[j]] = [
       copy[j],
@@ -72,6 +74,7 @@ function loadHardWords() {
     return Array.isArray(saved)
       ? saved
       : [];
+
   } catch {
     return [];
   }
@@ -97,7 +100,10 @@ function addHardWord(word) {
     )
   ) {
     hardWords.push(word);
-    saveHardWords(hardWords);
+
+    saveHardWords(
+      hardWords
+    );
   }
 }
 
@@ -106,10 +112,15 @@ function removeHardWord(word) {
   const hardWords =
     loadHardWords()
       .filter(item =>
-        !sameWord(item, word)
+        !sameWord(
+          item,
+          word
+        )
       );
 
-  saveHardWords(hardWords);
+  saveHardWords(
+    hardWords
+  );
 }
 
 
@@ -259,6 +270,7 @@ function startStudy() {
     );
 
   saveSession();
+
   showFlashcard();
 }
 
@@ -316,6 +328,7 @@ function resumeStudy() {
 
 function discardSession() {
   clearSession();
+
   showStartScreen();
 }
 
@@ -375,7 +388,6 @@ function showFlashcard() {
     "flipped"
   );
 
-
   const frontWord =
     document.getElementById(
       "front-word"
@@ -385,7 +397,6 @@ function showFlashcard() {
     document.getElementById(
       "back-word"
     );
-
 
   if (
     currentDirection ===
@@ -415,8 +426,8 @@ function showFlashcard() {
       "Polski → Angielski";
   }
 
-
   setActionButtons(false);
+
   updateProgress();
 }
 
@@ -439,18 +450,11 @@ function flipCard() {
     cardFlipped
   );
 
-  /*
-    Po pierwszym zobaczeniu
-    odpowiedzi można ocenić słowo.
-  */
-
   setActionButtons(true);
 }
 
 
-function setActionButtons(
-  enabled
-) {
+function setActionButtons(enabled) {
   document.getElementById(
     "repeat-btn"
   ).disabled =
@@ -477,18 +481,7 @@ function markKnown() {
 
   knownCount++;
 
-  /*
-    Jeśli wcześniej było trudne,
-    usuwamy je z zapisanej listy.
-  */
-
   removeHardWord(word);
-
-  /*
-    Jeśli w tej sesji wcześniej
-    oznaczyliśmy je jako trudne,
-    też je usuwamy.
-  */
 
   sessionHardWords =
     sessionHardWords.filter(
@@ -639,52 +632,62 @@ function showFinalScreen() {
       "hidden"
     );
 
-
   const completed =
     manualFinish
       ? currentIndex
       : studyWords.length;
-
 
   document.getElementById(
     "final-score"
   ).textContent =
     `${knownCount} / ${completed}`;
 
-
   let message;
 
   if (completed === 0) {
+
     message =
       "Nic się nie stało ❤️ Wrócisz do tego później.";
 
   } else {
+
     const percent =
       knownCount /
       completed;
 
-    if (percent >= 0.9) {
+    if (
+      percent === 1
+    ) {
+
       message =
-        "No i pięknie ❤️ Prawie wszystko już siedzi.";
+        "Cudownie, dobra robota! ❤️";
 
     } else if (
-      percent >= 0.7
+      percent >= 0.75
     ) {
+
       message =
-        "Bardzo dobrze ❤️ Jeszcze chwila powtórki i max.";
+        "Jest super! ❤️";
+
+    } else if (
+      percent >= 0.5
+    ) {
+
+      message =
+        "Dobrze idzie, nie zniechęcaj się księżniczko! ❤️";
 
     } else {
+
       message =
-        "Spokojnie ❤️ Po to są fiszki. Powtórzymy trudniejsze słówka.";
+        "Oj trzeba powtórzyć misiaku! ❤️";
+
     }
   }
-
 
   document.getElementById(
     "final-message"
   ).textContent =
     message;
-
 
   renderHardSummary();
 }
@@ -705,9 +708,7 @@ function renderHardSummary() {
       "hard-list"
     );
 
-
   list.innerHTML = "";
-
 
   if (
     sessionHardWords.length === 0
@@ -719,17 +720,14 @@ function renderHardSummary() {
     return;
   }
 
-
   summary.classList.remove(
     "hidden"
   );
-
 
   document.getElementById(
     "final-hard-count"
   ).textContent =
     `Do powtórki: ${sessionHardWords.length}`;
-
 
   sessionHardWords.forEach(
     word => {
@@ -818,11 +816,6 @@ function repeatHardWords() {
   currentIndex = 0;
   knownCount = 0;
 
-  /*
-    Czyścimy tylko listę
-    błędnych z tej nowej rundy.
-  */
-
   sessionHardWords = [];
 
   manualFinish = false;
@@ -839,6 +832,7 @@ function repeatHardWords() {
     );
 
   saveSession();
+
   showFlashcard();
 }
 
@@ -879,9 +873,7 @@ function showStartScreen() {
 }
 
 
-function showResumeScreen(
-  state
-) {
+function showResumeScreen(state) {
   hideAllScreens();
 
   document
@@ -1027,6 +1019,7 @@ document.addEventListener(
             event.key === " "
           ) {
             event.preventDefault();
+
             flipCard();
           }
 
@@ -1127,18 +1120,20 @@ document.addEventListener(
     const saved =
       loadSession();
 
-
     if (
       saved &&
       saved.currentIndex <
         saved.studyWords.length
     ) {
+
       showResumeScreen(
         saved
       );
 
     } else {
+
       clearSession();
+
       showStartScreen();
     }
 
