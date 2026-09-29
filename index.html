@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#fff3f7"
+  >
+
+  <meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+  >
+
+  <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="default"
+  >
+
+  <meta
+    name="apple-mobile-web-app-title"
+    content="Kamila Fiszki"
+  >
+
+  <title>English Fiszki ❤️</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css?v=1"
+  >
+
+  <link
+    rel="manifest"
+    href="manifest.json"
+  >
+</head>
+
+
+<body>
+
+  <main class="container">
+
+    <div class="card">
+
+
+      <!-- ========================= -->
+      <!-- WZNOWIENIE NAUKI -->
+      <!-- ========================= -->
+
+      <section
+        id="resume-screen"
+        class="screen hidden center"
+      >
+
+        <h1>
+          English Fiszki ❤️
+        </h1>
+
+        <h2>
+          Wrócić do poprzedniej nauki?
+        </h2>
+
+        <p class="resume-text">
+          Masz zapisany niedokończony zestaw ❤️
+        </p>
+
+        <p
+          id="resume-progress"
+          class="resume-progress"
+        >
+          Postęp: 0 / 0
+        </p>
+
+        <div class="resume-buttons">
+
+          <button
+            id="resume-btn"
+            class="main-btn"
+          >
+            Kontynuuj ▶
+          </button>
+
+          <button
+            id="discard-session-btn"
+            class="secondary-btn"
+          >
+            Zacznij od nowa
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================= -->
+      <!-- START -->
+      <!-- ========================= -->
+
+      <section
+        id="start-screen"
+        class="screen center"
+      >
+
+        <h1>
+          English Fiszki ❤️
+        </h1>
+
+        <p class="start-description">
+          Najpierw nauka, później quiz 😎
+        </p>
+
+
+        <div class="start-section">
+
+          <h2>
+            Wybierz kierunek
+          </h2>
+
+          <div class="choice-buttons">
+
+            <button
+              class="choice-btn mode-btn active"
+              data-mode="en-pl"
+            >
+              🇬🇧 EN → 🇵🇱 PL
+            </button>
+
+            <button
+              class="choice-btn mode-btn"
+              data-mode="pl-en"
+            >
+              🇵🇱 PL → 🇬🇧 EN
+            </button>
+
+            <button
+              class="choice-btn mode-btn"
+              data-mode="mixed"
+            >
+              🔀 Mieszany
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div class="start-section">
+
+          <h2>
+            Ile słówek?
+          </h2>
+
+          <div class="choice-buttons">
+
+            <button
+              class="choice-btn set-btn active"
+              data-set="all"
+            >
+              Wszystkie
+            </button>
+
+            <button
+              class="choice-btn set-btn"
+              data-set="20"
+            >
+              Losowe 20
+            </button>
+
+            <button
+              class="choice-btn set-btn"
+              data-set="50"
+            >
+              Losowe 50
+            </button>
+
+            <button
+              class="choice-btn set-btn"
+              data-set="hard"
+            >
+              🔁 Tylko trudne
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <button
+          id="start-study-btn"
+          class="main-btn start-btn"
+        >
+          Zaczynamy ❤️
+        </button>
+
+        <p class="small-info">
+          Dotknij fiszki, żeby zobaczyć tłumaczenie.
+        </p>
+
+      </section>
+
+
+      <!-- ========================= -->
+      <!-- FISZKI -->
+      <!-- ========================= -->
+
+      <section
+        id="flashcard-screen"
+        class="screen hidden"
+      >
+
+        <div class="top-stats">
+
+          <div>
+            <span class="stat-label">
+              Postęp
+            </span>
+
+            <strong id="progress-text">
+              0 / 0
+            </strong>
+          </div>
+
+          <div class="stat-right">
+            <span class="stat-label">
+              Do powtórki
+            </span>
+
+            <strong id="hard-count">
+              🔁 0
+            </strong>
+          </div>
+
+        </div>
+
+
+        <div class="progress-bar big-progress">
+
+          <div
+            id="progress"
+            class="progress"
+          ></div>
+
+        </div>
+
+
+        <p
+          id="direction-label"
+          class="direction-label"
+        >
+          Angielski → Polski
+        </p>
+
+
+        <div
+          id="flashcard"
+          class="flashcard"
+          role="button"
+          tabindex="0"
+          aria-label="Fiszka. Dotknij, aby ją odwrócić."
+        >
+
+          <div class="flashcard-inner">
+
+            <div class="flashcard-face flashcard-front">
+
+              <span class="card-label">
+                Fiszka
+              </span>
+
+              <div
+                id="front-word"
+                class="flashcard-word"
+              >
+                word
+              </div>
+
+              <span class="flip-hint">
+                Dotknij, żeby odwrócić
+              </span>
+
+            </div>
+
+
+            <div class="flashcard-face flashcard-back">
+
+              <span class="card-label">
+                Odpowiedź
+              </span>
+
+              <div
+                id="back-word"
+                class="flashcard-word"
+              >
+                słowo
+              </div>
+
+              <span class="flip-hint">
+                Dotknij, żeby wrócić
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div
+          id="answer-actions"
+          class="answer-actions"
+        >
+
+          <button
+            id="repeat-btn"
+            class="study-btn repeat-btn"
+            disabled
+          >
+            🔁 Powtórz
+          </button>
+
+          <button
+            id="know-btn"
+            class="study-btn know-btn"
+            disabled
+          >
+            Umiem ✅
+          </button>
+
+        </div>
+
+
+        <button
+          id="finish-study-btn"
+          class="finish-study-btn"
+        >
+          Zakończ naukę
+        </button>
+
+      </section>
+
+
+      <!-- ========================= -->
+      <!-- POTWIERDZENIE ZAKOŃCZENIA -->
+      <!-- ========================= -->
+
+      <section
+        id="finish-confirm-screen"
+        class="screen hidden center"
+      >
+
+        <h2>
+          Zakończyć naukę?
+        </h2>
+
+        <p class="finish-confirm-text">
+          Zobaczysz podsumowanie dotychczasowej nauki.
+        </p>
+
+        <div class="finish-confirm-buttons">
+
+          <button
+            id="confirm-finish-btn"
+            class="main-btn"
+          >
+            Tak, zakończ
+          </button>
+
+          <button
+            id="cancel-finish-btn"
+            class="secondary-btn"
+          >
+            Nie, wracam
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================= -->
+      <!-- KONIEC -->
+      <!-- ========================= -->
+
+      <section
+        id="final-screen"
+        class="screen hidden center"
+      >
+
+        <h2>
+          Gotowe ❤️
+        </h2>
+
+        <div
+          id="final-score"
+          class="final-score"
+        >
+          0 / 0
+        </div>
+
+        <p
+          id="final-message"
+          class="final-message"
+        >
+          Dobra robota ❤️
+        </p>
+
+
+        <div
+          id="hard-summary"
+          class="hard-summary hidden"
+        >
+
+          <p class="hard-title">
+            Te słówka warto jeszcze przejrzeć:
+          </p>
+
+          <p
+            id="final-hard-count"
+            class="final-hard-count"
+          >
+            Do powtórki: 0
+          </p>
+
+          <div
+            id="hard-list"
+            class="hard-list"
+          ></div>
+
+          <button
+            id="repeat-hard-btn"
+            class="main-btn"
+          >
+            Powtórz trudne 🔁
+          </button>
+
+        </div>
+
+
+        <button
+          id="restart-btn"
+          class="secondary-btn restart-btn"
+        >
+          Wybierz nowy zestaw
+        </button>
+
+      </section>
+
+
+    </div>
+
+  </main>
+
+
+  <script src="words.js?v=1"></script>
+  <script src="app.js?v=1"></script>
+
+</body>
+
+</html>
