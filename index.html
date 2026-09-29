@@ -26,10 +26,10 @@
 
   <meta
     name="apple-mobile-web-app-title"
-    content="Kamila Fiszki"
+    content="Fiszki Kociaka"
   >
 
-  <title>English Fiszki ❤️</title>
+  <title>Fiszki Kociaka ❤️</title>
 
   <link
     rel="stylesheet"
@@ -38,12 +38,20 @@
 
   <link
     rel="manifest"
-    href="manifest.json"
+    href="manifest.json?v=2"
   >
 
   <link
     rel="apple-touch-icon"
-    href="icons/icon-192.png"
+    sizes="192x192"
+    href="icons/icon-192.png?v=2"
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="192x192"
+    href="icons/icon-192.png?v=2"
   >
 
 </head>
@@ -66,7 +74,7 @@
       >
 
         <h1>
-          English Fiszki ❤️
+          Fiszki Kociaka ❤️
         </h1>
 
         <h2>
@@ -115,7 +123,7 @@
       >
 
         <h1>
-          English Fiszki ❤️
+          Fiszki Kociaka ❤️
         </h1>
 
         <p class="start-description">
@@ -234,6 +242,7 @@
           </div>
 
           <div class="stat-right">
+
             <span class="stat-label">
               Do powtórki
             </span>
@@ -241,6 +250,7 @@
             <strong id="hard-count">
               🔁 0
             </strong>
+
           </div>
 
         </div>
@@ -274,7 +284,12 @@
 
           <div class="flashcard-inner">
 
-            <div class="flashcard-face flashcard-front">
+
+            <!-- PRZÓD -->
+
+            <div
+              class="flashcard-face flashcard-front"
+            >
 
               <span class="card-label">
                 Fiszka
@@ -294,7 +309,11 @@
             </div>
 
 
-            <div class="flashcard-face flashcard-back">
+            <!-- TYŁ -->
+
+            <div
+              class="flashcard-face flashcard-back"
+            >
 
               <span class="card-label">
                 Odpowiedź
@@ -313,10 +332,13 @@
 
             </div>
 
+
           </div>
 
         </div>
 
+
+        <!-- PRZYCISKI -->
 
         <div
           id="answer-actions"
@@ -391,7 +413,7 @@
 
 
       <!-- ========================= -->
-      <!-- KONIEC -->
+      <!-- PODSUMOWANIE -->
       <!-- ========================= -->
 
       <section
@@ -417,6 +439,8 @@
           Dobra robota ❤️
         </p>
 
+
+        <!-- TRUDNE SŁÓWKA -->
 
         <div
           id="hard-summary"
@@ -464,15 +488,20 @@
   </main>
 
 
+  <!-- ========================= -->
+  <!-- SKRYPTY -->
+  <!-- ========================= -->
+
   <script src="words.js?v=1"></script>
   <script src="app.js?v=3"></script>
 
 
   <!-- ========================= -->
-  <!-- SERVICE WORKER / PWA -->
+  <!-- PWA / SERVICE WORKER -->
   <!-- ========================= -->
 
   <script>
+
     if ("serviceWorker" in navigator) {
 
       window.addEventListener(
@@ -482,21 +511,26 @@
           navigator.serviceWorker
             .register("./sw.js")
             .then(() => {
+
               console.log(
                 "Service Worker działa"
               );
+
             })
             .catch(error => {
+
               console.error(
                 "Service Worker error:",
                 error
               );
+
             });
 
         }
       );
 
     }
+
   </script>
 
 
