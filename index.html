@@ -40,6 +40,12 @@
     rel="manifest"
     href="manifest.json"
   >
+
+  <link
+    rel="apple-touch-icon"
+    href="icons/icon-192.png"
+  >
+
 </head>
 
 
@@ -460,6 +466,39 @@
 
   <script src="words.js?v=1"></script>
   <script src="app.js?v=3"></script>
+
+
+  <!-- ========================= -->
+  <!-- SERVICE WORKER / PWA -->
+  <!-- ========================= -->
+
+  <script>
+    if ("serviceWorker" in navigator) {
+
+      window.addEventListener(
+        "load",
+        () => {
+
+          navigator.serviceWorker
+            .register("./sw.js")
+            .then(() => {
+              console.log(
+                "Service Worker działa"
+              );
+            })
+            .catch(error => {
+              console.error(
+                "Service Worker error:",
+                error
+              );
+            });
+
+        }
+      );
+
+    }
+  </script>
+
 
 </body>
 
