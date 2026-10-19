@@ -137,4 +137,4 @@ const words = [
   { en: "take an interest in sth", pl: "zainteresować się czymś" },
   { en: "take pride in sth", pl: "szczycić się czymś" },
   { en: "take risks", pl: "podejmować ryzyko" },
-
+];
