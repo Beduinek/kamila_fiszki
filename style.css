@@ -71,6 +71,201 @@ h2 {
 
 
 /* ==================== */
+/* WYBÓR KARTKÓWKI */
+/* ==================== */
+
+.deck-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.deck-btn {
+  position: relative;
+
+  min-height: 135px;
+  padding: 22px;
+
+  border: 2px solid #efc2d3;
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #fff7fa
+    );
+
+  color: #5f4650;
+
+  cursor: pointer;
+  text-align: left;
+
+  box-shadow:
+    0 7px 20px rgba(214, 95, 139, 0.10);
+
+  transition:
+    transform 0.15s,
+    border-color 0.2s,
+    box-shadow 0.2s,
+    background 0.2s;
+}
+
+.deck-btn:hover {
+  border-color: #d95d8a;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fffafd,
+      #fdebf2
+    );
+
+  box-shadow:
+    0 10px 24px rgba(214, 95, 139, 0.18);
+
+  transform: translateY(-2px);
+}
+
+.deck-btn:active {
+  transform: scale(0.98);
+}
+
+.deck-name {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 22px;
+  font-weight: 700;
+
+  color: #b33f6c;
+}
+
+.deck-description {
+  display: block;
+
+  margin-bottom: 15px;
+
+  font-size: 15px;
+  line-height: 1.4;
+
+  color: #886b77;
+}
+
+.deck-count {
+  display: inline-block;
+
+  padding: 7px 11px;
+
+  border-radius: 999px;
+
+  background: #fbe1eb;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  color: #a73560;
+}
+
+
+/* ==================== */
+/* WSZYSTKIE KARTKÓWKI */
+/* ==================== */
+
+.deck-btn.all-decks {
+  grid-column: 1 / -1;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fdebf2,
+      #fff8fb
+    );
+
+  border-color: #e7a4bc;
+}
+
+.deck-btn.all-decks:hover {
+  border-color: #d95d8a;
+}
+
+
+/* ==================== */
+/* WYBRANA KARTKÓWKA */
+/* ==================== */
+
+.selected-deck-box {
+  max-width: 500px;
+
+  margin: 0 auto 30px;
+  padding: 18px;
+
+  border: 1px solid #efc2d3;
+  border-radius: 18px;
+
+  background: #fff8fb;
+
+  box-shadow:
+    0 5px 16px rgba(214, 95, 139, 0.08);
+}
+
+.selected-deck-box span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+
+  color: #a17b89;
+}
+
+.selected-deck-box strong {
+  display: block;
+
+  font-size: 20px;
+
+  color: #b33f6c;
+}
+
+.change-deck-btn {
+  margin-top: 14px;
+  padding: 9px 15px;
+
+  border: 1px solid #efb4ca;
+  border-radius: 12px;
+
+  background: #fbe1eb;
+
+  color: #a73560;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.15s;
+}
+
+.change-deck-btn:hover {
+  background: #f8d7e4;
+  border-color: #d95d8a;
+}
+
+.change-deck-btn:active {
+  transform: scale(0.97);
+}
+
+
+/* ==================== */
 /* START */
 /* ==================== */
 
@@ -103,6 +298,7 @@ h2 {
   font-size: 17px;
   font-weight: 600;
   cursor: pointer;
+
   transition:
     background 0.2s,
     border-color 0.2s,
@@ -148,15 +344,20 @@ h2 {
   padding: 16px 28px;
   border: none;
   border-radius: 18px;
-  background: linear-gradient(
-    90deg,
-    #e56f9b,
-    #d94f82
-  );
+
+  background:
+    linear-gradient(
+      90deg,
+      #e56f9b,
+      #d94f82
+    );
+
   color: #ffffff;
   font-size: 19px;
   font-weight: 700;
+
   cursor: pointer;
+
   transition:
     transform 0.15s,
     box-shadow 0.2s;
@@ -173,13 +374,18 @@ h2 {
 .secondary-btn {
   min-height: 58px;
   padding: 15px 26px;
+
   border: 2px solid #efb4ca;
   border-radius: 18px;
+
   background: #fff8fb;
   color: #a13962;
+
   font-size: 18px;
   font-weight: 600;
+
   cursor: pointer;
+
   transition:
     background 0.2s,
     border-color 0.2s,
@@ -275,11 +481,14 @@ h2 {
   width: 0;
   height: 100%;
   border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    #e56f9b,
-    #d94f82
-  );
+
+  background:
+    linear-gradient(
+      90deg,
+      #e56f9b,
+      #d94f82
+    );
+
   transition: width 0.3s ease;
 }
 
@@ -290,9 +499,12 @@ h2 {
 
 .direction-label {
   margin: 24px 0 18px;
+
   text-align: center;
+
   font-size: 17px;
   font-weight: 600;
+
   color: #9d6b7e;
 }
 
@@ -304,18 +516,25 @@ h2 {
 .flashcard {
   width: 100%;
   height: 390px;
+
   margin: 0 auto;
+
   perspective: 1200px;
+
   cursor: pointer;
+
   user-select: none;
   outline: none;
 }
 
 .flashcard-inner {
   position: relative;
+
   width: 100%;
   height: 100%;
+
   transition: transform 0.55s ease;
+
   transform-style: preserve-3d;
 }
 
@@ -325,6 +544,7 @@ h2 {
 
 .flashcard-face {
   position: absolute;
+
   inset: 0;
 
   display: flex;
@@ -368,10 +588,12 @@ h2 {
 
 .card-label {
   position: absolute;
+
   top: 24px;
 
   font-size: 15px;
   font-weight: 700;
+
   text-transform: uppercase;
   letter-spacing: 1px;
 
@@ -380,9 +602,11 @@ h2 {
 
 .flashcard-word {
   max-width: 100%;
+
   padding: 20px;
 
   text-align: center;
+
   font-size: 46px;
   font-weight: 700;
   line-height: 1.18;
@@ -394,9 +618,11 @@ h2 {
 
 .flip-hint {
   position: absolute;
+
   bottom: 24px;
 
   font-size: 15px;
+
   color: #ab8593;
 }
 
@@ -409,16 +635,22 @@ h2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 14px;
+
   margin-top: 24px;
 }
 
 .study-btn {
   min-height: 66px;
+
   padding: 15px 20px;
+
   border-radius: 18px;
+
   font-size: 19px;
   font-weight: 700;
+
   cursor: pointer;
+
   transition:
     transform 0.15s,
     opacity 0.2s,
@@ -431,23 +663,29 @@ h2 {
 
 .repeat-btn {
   border: 2px solid #e7a4bc;
+
   background: #fff4f8;
+
   color: #af4169;
 }
 
 .repeat-btn:hover:not(:disabled) {
   background: #fde5ee;
+
   box-shadow: 0 5px 14px rgba(183, 65, 105, 0.12);
 }
 
 .know-btn {
   border: 2px solid #93cfaa;
+
   background: #effaf3;
+
   color: #377d50;
 }
 
 .know-btn:hover:not(:disabled) {
   background: #e1f6e8;
+
   box-shadow: 0 5px 14px rgba(55, 125, 80, 0.12);
 }
 
@@ -463,14 +701,18 @@ h2 {
 
 .finish-study-btn {
   display: block;
+
   min-width: 190px;
+
   margin: 34px auto 0;
+
   padding: 14px 26px;
 
   border: 2px solid #efb4ca;
   border-radius: 16px;
 
   background: #fff8fb;
+
   color: #b33f6c;
 
   font-size: 18px;
@@ -487,7 +729,9 @@ h2 {
 
 .finish-study-btn:hover {
   background: #fdeaf1;
+
   border-color: #d95d8a;
+
   box-shadow: 0 4px 12px rgba(217, 79, 130, 0.12);
 }
 
@@ -502,15 +746,20 @@ h2 {
 
 .finish-confirm-text {
   margin: 20px 0 28px;
+
   font-size: 20px;
   line-height: 1.5;
+
   color: #6f5360;
 }
 
 .finish-confirm-buttons {
   display: grid;
+
   gap: 14px;
+
   max-width: 420px;
+
   margin: 0 auto;
 }
 
@@ -521,35 +770,45 @@ h2 {
 
 .final-score {
   margin: 12px 0;
+
   font-size: 58px;
   font-weight: 700;
+
   color: #c84678;
 }
 
 .final-message {
   margin: 20px 0 0;
+
   font-size: 22px;
   line-height: 1.5;
+
   color: #654752;
 }
 
 .hard-summary {
   margin-top: 32px;
   padding-top: 26px;
+
   border-top: 1px solid #f1d5df;
 }
 
 .hard-title {
   margin: 0 0 10px;
+
   text-align: center;
+
   font-size: 22px;
   font-weight: 700;
+
   color: #c84c7a;
 }
 
 .final-hard-count {
   margin: 0 0 18px;
+
   font-size: 18px;
+
   color: #795b67;
 }
 
@@ -560,9 +819,11 @@ h2 {
 
 .hard-list {
   max-height: 320px;
+
   overflow-y: auto;
 
   margin: 18px 0 24px;
+
   padding: 10px;
 
   border: 1px solid #f0c8d7;
@@ -577,10 +838,16 @@ h2 {
 
 .hard-item {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto
+    minmax(0, 1fr);
+
   align-items: center;
 
   gap: 12px;
+
   padding: 14px 16px;
 
   border-bottom: 1px solid #f4dce5;
@@ -594,11 +861,13 @@ h2 {
 
 .hard-en {
   font-weight: 700;
+
   color: #b33f6c;
 }
 
 .hard-separator {
   font-weight: 600;
+
   color: #c99aaa;
 }
 
@@ -612,11 +881,13 @@ h2 {
 
 .hard-list::-webkit-scrollbar-track {
   border-radius: 999px;
+
   background: #f8e8ee;
 }
 
 .hard-list::-webkit-scrollbar-thumb {
   border-radius: 999px;
+
   background: #e89ab7;
 }
 
@@ -640,6 +911,7 @@ h2 {
 
   .card {
     padding: 28px;
+
     border-radius: 22px;
   }
 
@@ -680,11 +952,13 @@ h2 {
 
   .card {
     padding: 20px 16px;
+
     border-radius: 20px;
   }
 
   h1 {
     font-size: 30px;
+
     margin-bottom: 20px;
   }
 
@@ -694,8 +968,55 @@ h2 {
 
   .start-description {
     font-size: 17px;
+
     margin-bottom: 24px;
   }
+
+
+  /* KARTKÓWKI */
+
+  .deck-list {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+
+    margin-top: 24px;
+  }
+
+  .deck-btn {
+    min-height: 115px;
+
+    padding: 18px;
+  }
+
+  .deck-btn.all-decks {
+    grid-column: auto;
+  }
+
+  .deck-name {
+    font-size: 20px;
+  }
+
+  .deck-description {
+    font-size: 14px;
+  }
+
+  .deck-count {
+    font-size: 13px;
+  }
+
+  .selected-deck-box {
+    margin-bottom: 24px;
+
+    padding: 16px;
+  }
+
+  .selected-deck-box strong {
+    font-size: 18px;
+  }
+
+
+  /* START */
 
   .start-section {
     margin-top: 24px;
@@ -707,17 +1028,22 @@ h2 {
 
   .choice-buttons {
     grid-template-columns: 1fr;
+
     gap: 10px;
   }
 
   .choice-btn {
     min-height: 56px;
+
     font-size: 17px;
   }
 
   .start-btn {
     margin-top: 28px;
   }
+
+
+  /* FISZKI */
 
   .top-stats {
     margin-bottom: 12px;
@@ -730,6 +1056,7 @@ h2 {
 
   .direction-label {
     margin: 20px 0 14px;
+
     font-size: 16px;
   }
 
@@ -739,40 +1066,52 @@ h2 {
 
   .flashcard-face {
     padding: 24px 18px;
+
     border-radius: 24px;
   }
 
   .card-label {
     top: 20px;
+
     font-size: 13px;
   }
 
   .flashcard-word {
     padding: 16px 8px;
+
     font-size: 38px;
   }
 
   .flip-hint {
     bottom: 20px;
+
     font-size: 14px;
   }
 
   .answer-actions {
     gap: 10px;
+
     margin-top: 20px;
   }
 
   .study-btn {
     min-height: 62px;
+
     padding: 14px 10px;
+
     font-size: 17px;
   }
 
   .finish-study-btn {
     margin-top: 30px;
+
     min-width: 180px;
+
     font-size: 17px;
   }
+
+
+  /* PODSUMOWANIE */
 
   .final-score {
     font-size: 48px;
@@ -792,8 +1131,11 @@ h2 {
 
   .hard-item {
     grid-template-columns: 1fr;
+
     gap: 4px;
+
     padding: 12px 10px;
+
     font-size: 16px;
   }
 
@@ -815,6 +1157,14 @@ h2 {
 
   h1 {
     font-size: 27px;
+  }
+
+  .deck-btn {
+    padding: 16px;
+  }
+
+  .deck-name {
+    font-size: 19px;
   }
 
   .flashcard {
