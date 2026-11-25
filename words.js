@@ -3,11 +3,6 @@ const decks = [
     id: "kartkowka-2",
     name: "📝 Kartkówka 2",
     words: [
-      { en: "basement flat", pl: "mieszkanie w suterenie" },
-      { en: "bedsit", pl: "wynajęty pokój, kawalerka" },
-      { en: "council house", pl: "budynek komunalny" },
-      { en: "manor house", pl: "dwór" },
-      { en: "penthouse", pl: "luksusowy apartament na ostatnim piętrze budynku" },
 
       { en: "allotment", pl: "działka" },
       { en: "area", pl: "okolica" },
@@ -65,22 +60,6 @@ const decks = [
       { en: "secure", pl: "zabezpieczyć, zamocować" },
       { en: "tape", pl: "taśma" },
       { en: "temporary address", pl: "adres tymczasowy" },
-      { en: "assemble furniture", pl: "składać meble" },
-      { en: "bubble wrap", pl: "folia bąbelkowa" },
-      { en: "cardboard box", pl: "pudło z kartonu" },
-      { en: "dismantle furniture", pl: "rozkładać meble" },
-      { en: "fill a van", pl: "zapełnić samochód" },
-      { en: "flat-pack furniture", pl: "meble w paczkach do samodzielnego montażu" },
-      { en: "fragile items", pl: "przedmioty delikatne, kruche" },
-      { en: "install", pl: "instalować, zakładać" },
-      { en: "load a van", pl: "zapełnić, załadować samochód" },
-      { en: "move house", pl: "przeprowadzać się" },
-      { en: "move out", pl: "wyprowadzić się" },
-      { en: "mover", pl: "pracownik, pracownica firmy przeprowadzkowej" },
-      { en: "removal company", pl: "firma przeprowadzkowa" },
-      { en: "removal van", pl: "samochód do przeprowadzek" },
-      { en: "set up house/home", pl: "założyć (własny) dom" },
-      { en: "settle in", pl: "zaaklimatyzować się, zaadaptować" }
     ]
   },
 
@@ -141,17 +120,7 @@ const decks = [
       { en: "wash clothes", pl: "prać ubrania" },
       { en: "wash the dishes", pl: "myć naczynia" },
       { en: "water the plants", pl: "podlewać rośliny" },
-      { en: "clean leaves out of the gutter", pl: "oczyścić rynny z liści" },
-      { en: "clean up the mess", pl: "posprzątać bałagan" },
-      { en: "convert an attic into a bedroom", pl: "przerobić strych na sypialnię" },
-      { en: "do your own plumbing", pl: "zajmować się hydrauliką" },
-      { en: "drop in", pl: "wpaść do kogoś" },
-      { en: "fix an aerial", pl: "naprawić antenę" },
-      { en: "keep things neat and tidy", pl: "utrzymywać czystość i porządek" },
-      { en: "paint the ceiling", pl: "pomalować sufit" },
-      { en: "put up some shelves", pl: "powiesić półki" },
-      { en: "replace a broken tile", pl: "wymienić pęknięty kafelek" },
-      { en: "throw out rubbish", pl: "wyrzucać śmieci" },
+     
 
       { en: "en-suite bathroom", pl: "łazienka przy sypialni" },
       { en: "facilities", pl: "udogodnienia, infrastruktura" },
